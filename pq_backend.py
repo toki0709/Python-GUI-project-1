@@ -5,12 +5,12 @@ import pandas as pd
 
 def import_csv_data():
     global v
-    csv_file_path = askopenfilename(mode='r', initialdir="C:/Users/nn/Downloads", filetypes=[
-        ('CSV Files', '*.csv'), ('All Files', '*.*')]
+    csv_file_path = askopenfilename(mode='r', initialdir="C:/Users/Asus/Desktop/Git Hub toki07/toki07", filetypes=[
+        ('CSV Files', '*.csv'), ('All Files', '*.*')])
 
     v.set(csv_file_path)
     df = pd.read_csv(csv_file_path)
-
+    return df
 
 root = tk.Tk()
 tk.Label(root, text='File Path').grid(row=0, column=0)

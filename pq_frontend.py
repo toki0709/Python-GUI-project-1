@@ -2,7 +2,7 @@
 # and all their functions and classes
 from tkinter import *
 from tkinter.ttk import *
-from PIL import ImageTk, Image
+#from PIL import ImageTk, Image
 from tkinter import filedialog
 from tkinter.filedialog import askopenfile
 import pandas as pd
@@ -13,16 +13,11 @@ root.geometry('400x250')
 root.title("8p2-certification GmbH")
 root.iconbitmap("favicon.ico")
 
-"""file = askopenfile(mode='r', filetypes=[  # initialdir="C:/Users/nn/Downloads",
-        ('CSV Files', '*.csv'), ('All Files', '*.*')])"""
-
 
 def open_file():
     global file
-    file = askopenfile(initialdir="C:/Users/nn/Downloads", filetypes=[
+    file = askopenfile(initialdir="C:/Users/Asus/Desktop/Git Hub toki07/toki07", filetypes=[
         ('CSV Files', '*.csv'), ('All Files', '*.*')])
-    """root.filename = filedialog.askopenfilename( mode='r',
-    initialdir='C:/Users/nn/Downloads', title='Open File', filetypes=(("CSV File", "*.csv"), ("All Files", "*.*")))"""
 
 
 def see_graph():
@@ -30,11 +25,8 @@ def see_graph():
     df = pd.read_csv(file)
     df.reset_index(drop=True)
 
-    df.columns = ['Real Power', 'Reactive Power Plant', 'Reactive Power Grid']
-
-    #columns = df.columns
-    #index = df.index
-    #values = df.values
+    df.columns = ['no.', 'Real Power',
+                  'Reactive Power Plant', 'Reactive Power Grid']
 
     y_axis = df['Real Power']
     rpg = df['Reactive Power Plant']
